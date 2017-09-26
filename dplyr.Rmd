@@ -84,4 +84,93 @@ c. `gapminder[50,3]` and `gapminder$lifeExp[50]`
 
 ## Data manipulation with dplyr
 
+[dplyr](https://dplyr.tidyverse.org) is an R package that simplifies the "manipulation" of data frames in R. It helps to organize the process by defining a set of discrete actions that you may wish to perform:
 
+- `filter` - filter a set of rows
+- `select` - select a set of columns
+- `arrange` - arrange/sort the rows
+- `mutate` - add a "mutated" version of a column or columns
+- `summarize` - summarize a column
+- `group_by` - group rows by the value of some column or columns
+
+We first need to load the dplyr package.
+
+```{r load_dplyr}
+library(dplyr)
+```
+
+Let's start with filter, for choosing some set of rows. For example, the following grabs all of the rows for Sweden.
+
+```{r filter_sweden}
+filter(gapminder, country == "Sweden")
+```
+
+You can filter with multiple criteria.
+
+```{r sweden_before_1969}
+filter(gapminder, country=="Sweden", year < 1969)
+```
+
+We use `select` to select a set of columns. We can combine the two by saving the output of `filter` and then using that for `select`.
+
+```{r filter_then_select}
+sweden <- filter(gapminder, country == "Sweden")
+select(sweden, year, pop)
+```
+
+**Challenge**: what was the population of the United States in 1952?
+
+## Pipes
+
+To use `filter` and then `select`, you need to send the output of one function into the next one. Above, we saved the result of `filter` and then used it when calling `select`. We could also have used nested functions.
+
+```{r filter_and_select_nested}
+select( filter(gapminder, country=="Sweden"), year, pop)
+```
+
+A more convenient way to do this is with the "pipe" operator, which looks like `%>%` and is made available via the [magrittr](http://magrittr.tidyverse.org/) package, automatically loaded with dplyr. There's an RStudio shortcut `Ctrl-Shift-M`. With the pipe operator, the output of one function is passed directly as input to the next function.
+
+```{r pipe_filter_select}
+gapminder %>% 
+  filter(country=="Sweden") %>% 
+  select(year, pop)
+```
+
+**Challenge**: Using pipes, subset the gapminder data to include rows where `gdpPercap` was greater than or equal to 35,000. Retain columns `country`, `year`, and `gdpPercap`.
+
+## More dplyr functions
+
+We use `arrange` to sort the rows based on some column. For example, we could sort the results of that last challenge based on `gdpPerCap`.
+
+```{r arrange_gdpPercap}
+gapminder %>% 
+  filter(gdpPercap >= 35000) %>% 
+  select(country, year, gdpPercap) %>% 
+  arrange(gdpPercap)
+```
+
+The default is to sort from smallest to largest ("ascending"). To sort in the opposite order ("descending"), we use `desc()`.
+
+```{r arrange_gdpPercap_desc}
+gapminder %>% 
+  filter(gdpPercap >= 35000) %>% 
+  select(country, year, gdpPercap) %>% 
+  arrange(desc(gdpPercap))
+```
+
+We use `mutate` to create new columns based on the existing columns. For example, if we wanted a total GDP column, we could do the following:
+
+```{r total_gdp}
+mutate(gapminder, total_gdp = gdpPercap * pop)
+```
+
+You could pipe that into `head` to just see a few rows. 
+```{r total_gdp_head}
+gapminder %>% 
+  mutate(total_gdp = gdpPercap * pop) %>% 
+  head
+```
+
+**Challenge**: Use mutate to calculate the total GDP in billions of dollars, retrieve just the results for the year 2007, and sort the rows in decreasing order.
+
+## Split-apply-combine
