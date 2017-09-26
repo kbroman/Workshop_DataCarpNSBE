@@ -80,7 +80,7 @@ a. `gapminder[50,3]` and `gapminder[50, "lifeExp"]`
 b. `gapminder[50,3]` and `gapminder[3, 50]`
 c. `gapminder[50,3]` and `gapminder$lifeExp[50]`
 
-**Challenge**: Which countries have had life expentencies greater than 80?
+**Challenge**: Which countries have had life expectencies greater than 80?
 
 ## Data manipulation with dplyr
 
