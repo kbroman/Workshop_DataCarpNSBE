@@ -1,0 +1,87 @@
+---
+title: "dplyr"
+author: "Karl Broman"
+date: "2017-09-26"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Load data, etc.
+
+We first want to load some data. We'll use the function `read.csv()` to load data from a CSV file.
+
+```{r read_gapminder}
+gapminder <- read.csv("http://kbroman.org/datacarp/gapminder.csv")
+```
+
+In the "environment pane", you'll now see that your workspace contains an object `gapminder`, which is a rectangle of data with `r nrow(gapminder)` rows and `r ncol(gapminder)` columns.
+
+Use `head()` to look at the first few rows.
+
+```{r head_gapminder}
+head(gapminder)
+```
+
+These data concern the life expectancy, population, and GDP per capita for different countries for every 5th year from `r min(gapminder$year)`--`r max(gapminder$year)`. GDP is in 2005 US dollars.
+
+There's also a function `tail()` to look at the last few rows. And both `head()` and `tail()` have arguments that allow you to control how many rows are shown.
+
+**Challenge**: Look at the help file for `head()` and figure out how to look at the first 20 rows.
+
+**Challenge**: The function `str()` tells you about the structure of a data object. Use `str()` with the `gapminder` data. How many countries are there? What is the "class" of this data object?
+
+Other useful functions for learning about a data set are `dim()`, `nrow()`, and `ncol()`.
+
+## Subsetting a data frame
+
+You can use square brackets to pull out individual values from the data frame.
+
+```{r brackets_11}
+gapminder[1,1]
+gapminder[3,5]
+```
+
+The number before the comma is the row; the number after the comma is the column.
+
+You can also pull out full rows or columns by leaving one of the two blank.
+
+```{r full_row_or_column, results="hide"}
+gapminder[1000,]
+gapminder[,3]
+```
+
+When you pull out a full column, you get a vector of values. When you pull out a full row, you get a data frame with one row.
+
+You can also refer to the columns using their names. And you can further refer to them with dollar signs.
+
+```{r column_references}
+gapminder[80,"lifeExp"]
+gapminder$lifeExp[80]
+```
+
+You use vectors to grab slices of the data.
+
+```{r grab_slice}
+gapminder[101:110, c("country", "year")]
+```
+
+You can also use conditions.
+
+```{r slice_by_condition}
+gapminder[gapminder$pop <= 100000, ]
+```
+
+**Challenge**: Which of the following are *not* equivalent?
+
+a. `gapminder[50,3]` and `gapminder[50, "lifeExp"]`
+b. `gapminder[50,3]` and `gapminder[3, 50]`
+c. `gapminder[50,3]` and `gapminder$lifeExp[50]`
+
+**Challenge**: Which countries have had life expentencies greater than 80?
+
+## Data manipulation with dplyr
+
+
