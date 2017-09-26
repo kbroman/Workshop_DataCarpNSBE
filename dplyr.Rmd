@@ -5,6 +5,10 @@ date: "2017-09-26"
 output: html_document
 ---
 
+(This lesson was adapted from
+[Kara Woo's materials](http://karawoo.com/2015-04-27-wsu/syllabus/R_intro_02_subsetting_summarizing.html)
+which were adapted from [Jeff Hollister's materials](http://usepa.github.io/introR/2015/01/14/03-Clean/).
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
@@ -131,8 +135,8 @@ select( filter(gapminder, country=="Sweden"), year, pop)
 A more convenient way to do this is with the "pipe" operator, which looks like `%>%` and is made available via the [magrittr](http://magrittr.tidyverse.org/) package, automatically loaded with dplyr. There's an RStudio shortcut `Ctrl-Shift-M`. With the pipe operator, the output of one function is passed directly as input to the next function.
 
 ```{r pipe_filter_select}
-gapminder %>% 
-  filter(country=="Sweden") %>% 
+gapminder %>%
+  filter(country=="Sweden") %>%
   select(year, pop)
 ```
 
@@ -143,18 +147,18 @@ gapminder %>%
 We use `arrange` to sort the rows based on some column. For example, we could sort the results of that last challenge based on `gdpPerCap`.
 
 ```{r arrange_gdpPercap}
-gapminder %>% 
-  filter(gdpPercap >= 35000) %>% 
-  select(country, year, gdpPercap) %>% 
+gapminder %>%
+  filter(gdpPercap >= 35000) %>%
+  select(country, year, gdpPercap) %>%
   arrange(gdpPercap)
 ```
 
 The default is to sort from smallest to largest ("ascending"). To sort in the opposite order ("descending"), we use `desc()`.
 
 ```{r arrange_gdpPercap_desc}
-gapminder %>% 
-  filter(gdpPercap >= 35000) %>% 
-  select(country, year, gdpPercap) %>% 
+gapminder %>%
+  filter(gdpPercap >= 35000) %>%
+  select(country, year, gdpPercap) %>%
   arrange(desc(gdpPercap))
 ```
 
@@ -164,10 +168,10 @@ We use `mutate` to create new columns based on the existing columns. For example
 mutate(gapminder, total_gdp = gdpPercap * pop)
 ```
 
-You could pipe that into `head` to just see a few rows. 
+You could pipe that into `head` to just see a few rows.
 ```{r total_gdp_head}
-gapminder %>% 
-  mutate(total_gdp = gdpPercap * pop) %>% 
+gapminder %>%
+  mutate(total_gdp = gdpPercap * pop) %>%
   head
 ```
 
