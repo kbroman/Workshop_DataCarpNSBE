@@ -128,10 +128,14 @@ ggplot(gm_1952, aes(x=gdpPercap, y=lifeExp, color=continent)) +
 
 > **Challenge**:
 >
-> Try out the `size`, `shape`, and `color` aesthetics, both with
-> categorical variables (such as `continent`) and numeric variables
-> (such as `pop`).
-
+> Try out the `size`, `shape`, and `color` aesthetics.
+>
+> - Make a scatterplot of `lifeExp` vs `gdpPercap`.
+> - Make point `size` correspond to the population
+> - Make point `shape` correspond to the continent
+> - Make point `color` correspond to the continent
+> - What happens if you use `aes(color=pop)`?
+> - How about `aes(shape=pop)`?
 
 ### Layers
 
@@ -186,11 +190,12 @@ p + geom_line() + geom_point() + aes(color=year)
 > **Challenge**:
 >
 > Make a plot of `lifeExp` vs `gdpPercap` for China and India, with
-> lines in black but points colored by country.
+> both lines and points.
 
 ### Groups
 
-One's first attempt at the previous challenge may look like this:
+Suppose, in that last challenge, we'd wanted to have black lines but
+the points colored by country. We might try this:
 
 ```{r india_china_nogroup}
 india_china <- filter(gapminder, country=="India" | country=="China")
