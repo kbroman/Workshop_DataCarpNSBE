@@ -10,7 +10,8 @@ output: html_document
 which were adapted from [Jeff Hollister's materials](http://usepa.github.io/introR/2015/01/14/03-Clean/).
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, results="hide")
+knitr::opts_chunk$set(echo = TRUE, results="hide", 
+                      message=FALSE, warning=FALSE)
 ```
 
 ### Load data, etc.
