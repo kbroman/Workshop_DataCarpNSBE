@@ -8,6 +8,9 @@ Chicago, Illinois, on 28 Sept 2017.
 These lessons cover [dplyr](http://dplyr.tidyverse.org/) and
 [ggplot2](http://ggplot2.tidyverse.org/).
 
+- [dplyr lesson](dplyr.html)
+- [ggplot2 lesson](ggplot2.html)
+
 Further details on the workshop are at <https://christinalk.github.io/2017-09-28-nsbe/>
 
 ---
