@@ -236,3 +236,22 @@ gapminder %>%
   group_by(continent, year) %>% 
   summarize(mean_gdpPercap=mean(gdpPercap))
 ```
+
+> **Challenge**: Calculate the overall GDP per capita by continent in the years 1952 and 2007.
+
+> **Challenge**: Calculate the overall GDP per capita by continent in the year 1952 and 2007.
+>
+> 1. Use `filter()` to pull out the rows with `year %in% c(1952,2007)`.
+> 2. Use `mutate()` to calculate the total GDP for each country.
+> 3. Use `group_by()` and `summarize()` (with `sum()`) to calculate the total GDP and total population for each continent.
+> 4. Use `mutate()` to calculate the GDP per capita for each continent.
+
+```{r final_challenge}
+gapminder %>% 
+  filter(year %in% c(1952, 2007)) %>% 
+  mutate(total_gdp=pop*gdpPercap) %>% 
+  group_by(continent, year) %>% 
+  summarize(sum_gdp=sum(total_gdp), sum_pop=sum(pop*1.0)) %>% 
+  mutate(overall_gdpPercap=sum_gdp/sum_pop) %>% 
+  arrange(desc(overall_gdpPercap))
+```
