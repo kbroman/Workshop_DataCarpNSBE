@@ -36,7 +36,10 @@ There's also a function `tail()` to look at the last few rows. And both `head()`
 
 > **Challenge**: Look at the help file for `tail()` and figure out how to look at the last 20 rows.
 
-> **Challenge**: The function `str()` tells you about the structure of a data object. Use `str()` with the `gapminder` data. How many countries are there? What is the "class" of this data object?
+> **Challenge**: The function `str()` tells you about the structure of a data object. Use `str()` with the `gapminder` data. 
+>
+> - How many countries are there? 
+> - What is the "class" of this data object?
 
 Other useful functions for learning about a data set are `dim()`, `nrow()`, and `ncol()`.
 
@@ -104,7 +107,7 @@ We first need to load the dplyr package.
 library(dplyr)
 ```
 
-Let's start with filter, for choosing some set of rows. For example, the following grabs all of the rows for Sweden.
+Let's start with `filter`, for choosing some set of rows. For example, the following grabs all of the rows for Sweden.
 
 ```{r filter_sweden}
 filter(gapminder, country == "Sweden")
@@ -153,7 +156,7 @@ gapminder %>%
   select(year, pop)
 ```
 
-> **Challenge**: Using pipes, subset the gapminder data to include rows where `gdpPercap` was greater than or equal to 35,000. Retain columns `country`, `year`, and `gdpPercap`.
+> **Challenge**: Using pipes, subset the gapminder data to grab rows where `gdpPercap` was greater than or equal to 35,000. Retain columns `country`, `year`, and `gdpPercap`.
 
 ### More dplyr functions
 
