@@ -237,12 +237,12 @@ select(sweden, year, pop)</code></pre>
 <p><strong>Challenge</strong>: Use mutate to calculate the total GDP in billions of dollars, retrieve just the results for the year 2007, and sort the rows in decreasing order.</p>
 </blockquote>
 <p>We use <code>summarize()</code> to get summaries of the values in a column.</p>
-<pre class="r"><code>gapminder %&gt;% 
-  filter(year==2007) %&gt;% 
+<pre class="r"><code>gapminder %&gt;%
+  filter(year==2007) %&gt;%
   summarize(mean_pop = mean(pop))</code></pre>
 <p>You can include as many summaries as you want.</p>
-<pre class="r"><code>gapminder %&gt;% 
-  filter(year==2007) %&gt;% 
+<pre class="r"><code>gapminder %&gt;%
+  filter(year==2007) %&gt;%
   summarize(mean_pop=mean(pop), median_pop=median(pop),
             min_pop=min(pop), max_pop=max(pop))</code></pre>
 </div>
@@ -250,34 +250,34 @@ select(sweden, year, pop)</code></pre>
 <h3>Split-apply-combine</h3>
 <p>Most commonly, what we want to do is get group-specific summaries. We think of this as the “split-apply-combine” approach, where we split the data by the values in a column, apply some function to each group, and then combine the results. We use <code>group_by</code> to do the splitting, and then <code>summarize</code> to calculate the summary and combine the results.</p>
 <p>For example, the average population per country, by continent, in the year 2007.</p>
-<pre class="r"><code>gapminder %&gt;% 
-  filter(year==2007) %&gt;% 
-  group_by(continent) %&gt;% 
+<pre class="r"><code>gapminder %&gt;%
+  filter(year==2007) %&gt;%
+  group_by(continent) %&gt;%
   summarize(mean_pop=mean(pop))</code></pre>
 <p>I always like to sort the results.</p>
-<pre class="r"><code>gapminder %&gt;% 
-  filter(year==2007) %&gt;% 
-  group_by(continent) %&gt;% 
-  summarize(mean_pop=mean(pop)) %&gt;% 
+<pre class="r"><code>gapminder %&gt;%
+  filter(year==2007) %&gt;%
+  group_by(continent) %&gt;%
+  summarize(mean_pop=mean(pop)) %&gt;%
   arrange(desc(mean_pop))</code></pre>
 <p>You can use <code>n()</code> to get the counts in each group.</p>
-<pre class="r"><code>gapminder %&gt;% 
-  filter(year==2007) %&gt;% 
-  group_by(continent) %&gt;% 
-  summarize(mean_pop=mean(pop), n=n()) %&gt;% 
+<pre class="r"><code>gapminder %&gt;%
+  filter(year==2007) %&gt;%
+  group_by(continent) %&gt;%
+  summarize(mean_pop=mean(pop), n=n()) %&gt;%
   arrange(desc(mean_pop))</code></pre>
 <blockquote>
 <p><strong>Challenge</strong>: What was the average life expectancy (<code>lifeExp</code>) by continent in 2007?</p>
 </blockquote>
 <p>You can use <code>group_by</code> with multiple columns, for example to get the average GDP per capita by continent and by year.</p>
 <pre class="r"><code>gapminder %&gt;%
-  group_by(continent, year) %&gt;% 
+  group_by(continent, year) %&gt;%
   summarize(mean_gdpPercap=mean(gdpPercap))</code></pre>
 <blockquote>
 <p><strong>Challenge</strong>: Calculate the overall GDP per capita by continent in the years 1952 and 2007.</p>
 </blockquote>
 <blockquote>
-<p><strong>Challenge</strong>: Calculate the overall GDP per capita by continent in the year 1952 and 2007.</p>
+<p><strong>Challenge</strong>: Calculate the overall GDP per capita by continent in the years 1952 and 2007.</p>
 <ol style="list-style-type: decimal">
 <li>Use <code>filter()</code> to pull out the rows with <code>year %in% c(1952,2007)</code>.</li>
 <li>Use <code>mutate()</code> to calculate the total GDP for each country.</li>
@@ -285,12 +285,12 @@ select(sweden, year, pop)</code></pre>
 <li>Use <code>mutate()</code> to calculate the GDP per capita for each continent.</li>
 </ol>
 </blockquote>
-<pre class="r"><code>gapminder %&gt;% 
-  filter(year %in% c(1952, 2007)) %&gt;% 
-  mutate(total_gdp=pop*gdpPercap) %&gt;% 
-  group_by(continent, year) %&gt;% 
-  summarize(sum_gdp=sum(total_gdp), sum_pop=sum(pop*1.0)) %&gt;% 
-  mutate(overall_gdpPercap=sum_gdp/sum_pop) %&gt;% 
+<pre class="r"><code>gapminder %&gt;%
+  filter(year %in% c(1952, 2007)) %&gt;%
+  mutate(total_gdp=pop*gdpPercap) %&gt;%
+  group_by(continent, year) %&gt;%
+  summarize(sum_gdp=sum(total_gdp), sum_pop=sum(pop*1.0)) %&gt;%
+  mutate(overall_gdpPercap=sum_gdp/sum_pop) %&gt;%
   arrange(desc(overall_gdpPercap))</code></pre>
 </div>
 

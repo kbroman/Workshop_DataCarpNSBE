@@ -10,7 +10,7 @@ output: html_document
 which were adapted from [Jeff Hollister's materials](http://usepa.github.io/introR/2015/01/14/03-Clean/).
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, results="hide", 
+knitr::opts_chunk$set(echo = TRUE, results="hide",
                       message=FALSE, warning=FALSE)
 ```
 
@@ -36,9 +36,9 @@ There's also a function `tail()` to look at the last few rows. And both `head()`
 
 > **Challenge**: Look at the help file for `tail()` and figure out how to look at the last 20 rows.
 
-> **Challenge**: The function `str()` tells you about the structure of a data object. Use `str()` with the `gapminder` data. 
+> **Challenge**: The function `str()` tells you about the structure of a data object. Use `str()` with the `gapminder` data.
 >
-> - How many countries are there? 
+> - How many countries are there?
 > - What is the "class" of this data object?
 
 Other useful functions for learning about a data set are `dim()`, `nrow()`, and `ncol()`.
@@ -83,7 +83,7 @@ gapminder[gapminder$pop <= 100000, ]
 ```
 
 > **Challenge**: Which of the following are *not* equivalent?
-> 
+>
 > a. `gapminder[50,3]` and `gapminder[50, "lifeExp"]`
 > b. `gapminder[50,3]` and `gapminder[3, 50]`
 > c. `gapminder[50,3]` and `gapminder$lifeExp[50]`
@@ -196,16 +196,16 @@ gapminder %>%
 We use `summarize()` to get summaries of the values in a column.
 
 ```{r summarize}
-gapminder %>% 
-  filter(year==2007) %>% 
+gapminder %>%
+  filter(year==2007) %>%
   summarize(mean_pop = mean(pop))
 ```
 
 You can include as many summaries as you want.
 
 ```{r multiple_summaries}
-gapminder %>% 
-  filter(year==2007) %>% 
+gapminder %>%
+  filter(year==2007) %>%
   summarize(mean_pop=mean(pop), median_pop=median(pop),
             min_pop=min(pop), max_pop=max(pop))
 ```
@@ -217,29 +217,29 @@ Most commonly, what we want to do is get group-specific summaries. We think of t
 For example, the average population per country, by continent, in the year 2007.
 
 ```{r pop_by_continent}
-gapminder %>% 
-  filter(year==2007) %>% 
-  group_by(continent) %>% 
+gapminder %>%
+  filter(year==2007) %>%
+  group_by(continent) %>%
   summarize(mean_pop=mean(pop))
 ```
 
 I always like to sort the results.
 
 ```{r pop_by_continent_sorted}
-gapminder %>% 
-  filter(year==2007) %>% 
-  group_by(continent) %>% 
-  summarize(mean_pop=mean(pop)) %>% 
+gapminder %>%
+  filter(year==2007) %>%
+  group_by(continent) %>%
+  summarize(mean_pop=mean(pop)) %>%
   arrange(desc(mean_pop))
 ```
 
 You can use `n()` to get the counts in each group.
 
 ```{r also_n}
-gapminder %>% 
-  filter(year==2007) %>% 
-  group_by(continent) %>% 
-  summarize(mean_pop=mean(pop), n=n()) %>% 
+gapminder %>%
+  filter(year==2007) %>%
+  group_by(continent) %>%
+  summarize(mean_pop=mean(pop), n=n()) %>%
   arrange(desc(mean_pop))
 ```
 
@@ -249,13 +249,13 @@ You can use `group_by` with multiple columns, for example to get the average GDP
 
 ```{r ave_gdp_by_continent_and_year}
 gapminder %>%
-  group_by(continent, year) %>% 
+  group_by(continent, year) %>%
   summarize(mean_gdpPercap=mean(gdpPercap))
 ```
 
 > **Challenge**: Calculate the overall GDP per capita by continent in the years 1952 and 2007.
 
-> **Challenge**: Calculate the overall GDP per capita by continent in the year 1952 and 2007.
+> **Challenge**: Calculate the overall GDP per capita by continent in the years 1952 and 2007.
 >
 > 1. Use `filter()` to pull out the rows with `year %in% c(1952,2007)`.
 > 2. Use `mutate()` to calculate the total GDP for each country.
@@ -263,11 +263,11 @@ gapminder %>%
 > 4. Use `mutate()` to calculate the GDP per capita for each continent.
 
 ```{r final_challenge}
-gapminder %>% 
-  filter(year %in% c(1952, 2007)) %>% 
-  mutate(total_gdp=pop*gdpPercap) %>% 
-  group_by(continent, year) %>% 
-  summarize(sum_gdp=sum(total_gdp), sum_pop=sum(pop*1.0)) %>% 
-  mutate(overall_gdpPercap=sum_gdp/sum_pop) %>% 
+gapminder %>%
+  filter(year %in% c(1952, 2007)) %>%
+  mutate(total_gdp=pop*gdpPercap) %>%
+  group_by(continent, year) %>%
+  summarize(sum_gdp=sum(total_gdp), sum_pop=sum(pop*1.0)) %>%
+  mutate(overall_gdpPercap=sum_gdp/sum_pop) %>%
   arrange(desc(overall_gdpPercap))
 ```
