@@ -138,7 +138,11 @@ $(document).ready(function () {
 <p><strong>Challenge</strong>: Look at the help file for <code>tail()</code> and figure out how to look at the last 20 rows.</p>
 </blockquote>
 <blockquote>
-<p><strong>Challenge</strong>: The function <code>str()</code> tells you about the structure of a data object. Use <code>str()</code> with the <code>gapminder</code> data. How many countries are there? What is the “class” of this data object?</p>
+<p><strong>Challenge</strong>: The function <code>str()</code> tells you about the structure of a data object. Use <code>str()</code> with the <code>gapminder</code> data.</p>
+<ul>
+<li>How many countries are there?</li>
+<li>What is the “class” of this data object?</li>
+</ul>
 </blockquote>
 <p>Other useful functions for learning about a data set are <code>dim()</code>, <code>nrow()</code>, and <code>ncol()</code>.</p>
 </div>
@@ -184,7 +188,7 @@ gapminder$lifeExp[80]</code></pre>
 </ul>
 <p>We first need to load the dplyr package.</p>
 <pre class="r"><code>library(dplyr)</code></pre>
-<p>Let’s start with filter, for choosing some set of rows. For example, the following grabs all of the rows for Sweden.</p>
+<p>Let’s start with <code>filter</code>, for choosing some set of rows. For example, the following grabs all of the rows for Sweden.</p>
 <pre class="r"><code>filter(gapminder, country == &quot;Sweden&quot;)</code></pre>
 <p>You can filter with multiple criteria.</p>
 <pre class="r"><code>filter(gapminder, country==&quot;Sweden&quot;, year &lt; 1969)</code></pre>
@@ -208,7 +212,7 @@ select(sweden, year, pop)</code></pre>
   filter(country==&quot;Sweden&quot;) %&gt;%
   select(year, pop)</code></pre>
 <blockquote>
-<p><strong>Challenge</strong>: Using pipes, subset the gapminder data to include rows where <code>gdpPercap</code> was greater than or equal to 35,000. Retain columns <code>country</code>, <code>year</code>, and <code>gdpPercap</code>.</p>
+<p><strong>Challenge</strong>: Using pipes, subset the gapminder data to grab rows where <code>gdpPercap</code> was greater than or equal to 35,000. Retain columns <code>country</code>, <code>year</code>, and <code>gdpPercap</code>.</p>
 </blockquote>
 </div>
 <div id="more-dplyr-functions" class="section level3">
@@ -263,9 +267,9 @@ select(sweden, year, pop)</code></pre>
   summarize(mean_pop=mean(pop), n=n()) %&gt;% 
   arrange(desc(mean_pop))</code></pre>
 <blockquote>
-<p><strong>Challenge</strong>: What is the average GDP per cap (<code>gdpPercap</code>) by continent?</p>
+<p><strong>Challenge</strong>: What was the average life expectancy (<code>lifeExp</code>) by continent in 2007?</p>
 </blockquote>
-<p>You can use <code>group_by</code> with multiple columns, for example the average GDP per capita by continent and by year.</p>
+<p>You can use <code>group_by</code> with multiple columns, for example to get the average GDP per capita by continent and by year.</p>
 <pre class="r"><code>gapminder %&gt;%
   group_by(continent, year) %&gt;% 
   summarize(mean_gdpPercap=mean(gdpPercap))</code></pre>
