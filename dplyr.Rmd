@@ -243,9 +243,9 @@ gapminder %>%
   arrange(desc(mean_pop))
 ```
 
-> **Challenge**: What is the average GDP per cap (`gdpPercap`) by continent?
+> **Challenge**: What was the average life expectancy (`lifeExp`) by continent in 2007?
 
-You can use `group_by` with multiple columns, for example the average GDP per capita by continent and by year.
+You can use `group_by` with multiple columns, for example to get the average GDP per capita by continent and by year.
 
 ```{r ave_gdp_by_continent_and_year}
 gapminder %>%
