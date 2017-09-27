@@ -13,7 +13,7 @@ which were adapted from [Jeff Hollister's materials](http://usepa.github.io/intr
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## Load data, etc.
+### Load data, etc.
 
 We first want to load some data. We'll use the function `read.csv()` to load data from a CSV file.
 
@@ -39,7 +39,7 @@ There's also a function `tail()` to look at the last few rows. And both `head()`
 
 Other useful functions for learning about a data set are `dim()`, `nrow()`, and `ncol()`.
 
-## Subsetting a data frame
+### Subsetting a data frame
 
 You can use square brackets to pull out individual values from the data frame.
 
@@ -86,7 +86,7 @@ c. `gapminder[50,3]` and `gapminder$lifeExp[50]`
 
 **Challenge**: Which countries have had life expectencies greater than 80?
 
-## Data manipulation with dplyr
+### Data manipulation with dplyr
 
 [dplyr](https://dplyr.tidyverse.org) is an R package that simplifies the "manipulation" of data frames in R. It helps to organize the process by defining a set of discrete actions that you may wish to perform:
 
@@ -124,7 +124,7 @@ select(sweden, year, pop)
 
 **Challenge**: what was the population of the United States in 1952?
 
-## Pipes
+### Pipes
 
 To use `filter` and then `select`, you need to send the output of one function into the next one. Above, we saved the result of `filter` and then used it when calling `select`. We could also have used nested functions.
 
@@ -142,7 +142,7 @@ gapminder %>%
 
 **Challenge**: Using pipes, subset the gapminder data to include rows where `gdpPercap` was greater than or equal to 35,000. Retain columns `country`, `year`, and `gdpPercap`.
 
-## More dplyr functions
+### More dplyr functions
 
 We use `arrange` to sort the rows based on some column. For example, we could sort the results of that last challenge based on `gdpPerCap`.
 
@@ -177,4 +177,4 @@ gapminder %>%
 
 **Challenge**: Use mutate to calculate the total GDP in billions of dollars, retrieve just the results for the year 2007, and sort the rows in decreasing order.
 
-## Split-apply-combine
+### Split-apply-combine
