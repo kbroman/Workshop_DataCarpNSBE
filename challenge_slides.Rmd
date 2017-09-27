@@ -1,0 +1,146 @@
+---
+output: slidy_presentation
+---
+
+# Challenge 1
+
+Look at the help file for `tail()` and figure out how to look at the last 20 rows.
+
+---
+
+# Challenge 2
+
+The function `str()` tells you about the structure of a data object. Use `str()` with the `gapminder` data.
+
+- How many countries are there?
+- What is the "class" of this data object?
+
+---
+
+# Challenge 3
+
+Which of the following are *not* equivalent?
+
+a. `gapminder[50,3]` and `gapminder[50, "lifeExp"]`
+b. `gapminder[50,3]` and `gapminder[3, 50]`
+c. `gapminder[50,3]` and `gapminder$lifeExp[50]`
+
+---
+
+# Challenge 4
+
+Which countries have had life expectencies greater than 80?
+
+---
+
+# Challenge 5
+
+What was the population of the United States in 1952?
+
+---
+
+# Challenge 6
+
+Using pipes, subset the gapminder data to grab rows where `gdpPercap` was greater than or equal to 35,000. Retain columns `country`, `year`, and `gdpPercap`.
+
+---
+
+# Challenge 7
+
+Use mutate to calculate the total GDP in billions of dollars, retrieve just the results for the year 2007, and sort the rows in decreasing order.
+
+---
+
+# Challenge 8
+
+What was the average life expectancy (`lifeExp`) by continent in 2007?
+
+---
+
+# Challenge 9
+
+Calculate the overall GDP per capita by continent in the years 1952 and 2007.
+
+---
+
+# Challenge 10
+
+Calculate the overall GDP per capita by continent in the years 1952 and 2007.
+
+1. Use `filter()` to pull out the rows with `year %in% c(1952,2007)`.
+2. Use `mutate()` to calculate the total GDP for each country.
+3. Use `group_by()` and `summarize()` (with `sum()`) to calculate the total GDP and total population for each continent.
+4. Use `mutate()` to calculate the GDP per capita for each continent.
+
+---
+
+# Challenge 11
+
+
+Make a scatterplot of `lifeExp` vs `gdpPercap` with only for the data for
+China.
+
+---
+
+# Challenge 12
+
+
+Try out the `size`, `shape`, and `color` aesthetics.
+
+- Make a scatterplot of `lifeExp` vs `gdpPercap`.
+- Make point `size` correspond to the population
+- Make point `shape` correspond to the continent
+- Make point `color` correspond to the continent
+- What happens if you use `aes(color=pop)`?
+- How about `aes(shape=pop)`?
+
+---
+
+# Challenge 13
+
+
+Make a plot of `lifeExp` vs `gdpPercap` for China and India, with
+both lines and points.
+
+---
+
+# Challenge 14
+
+
+Explore the distribution of the population sizes of countries, by
+continent.
+
+---
+
+# Challenge 15
+
+
+Select five countries of interest (e.g., China, India, US, France,
+Nigeria) and plot `lifeExp` vs `gdpPercap` across time (with
+`geom_line`), faceting by country.
+
+---
+
+# Challenge 16
+
+
+Revisit a few of the plots you've made and try saving PNG and PDF
+files. Try different heights and widths. Try out the `scale` parameter.
+
+---
+
+# Challenge 17
+
+
+Create a plot with lines for the United States and Sweden, but
+using the axis limits defined with the full data.
+
+---
+
+# Challenge 18
+
+
+Make a set of histograms of `lifeExp` for the year 2007, using
+`facet_grid` to split by continent. Use different colors
+for the five continents, chosen manually.
+
