@@ -569,20 +569,18 @@ p + theme_solarized_2()
 ```
 
 Personally, I like the default ggplot theme, but I want to remove the
-tick marks and add a black border. You create this as follows.
-(Tomorrow afternoon, we'll talk more about creating functions.)
+tick marks and add a black border. You get this with `theme_karl()` in
+my [broman](https://github.com/kbroman/broman) package. Install it as
+follows.
 
-```{r theme_karl}
-theme_karl <-
-    function(...)
-    theme(panel.border=element_rect(fill=NA, color="black"),
-          strip.background=element_rect(fill="gray80", color="black"),
-          axis.ticks.length = grid::unit(0, "cm"), ...)
+```{r install_broman, eval=FALSE}
+install.packages("broman")
 ```
 
 Now, put it to use:
 
 ```{r use_karl_theme}
+library(broman)
 p + theme_karl()
 ```
 
