@@ -116,14 +116,26 @@ You can filter with multiple criteria.
 filter(gapminder, country=="Sweden", year < 1969)
 ```
 
+> **Challenge**: What was the population of the United States in 1952?
+
+What if we want Sweden for the years 1952 and 2007? There are two ways to do this. First we can use the vertical bar (`|`) which stands for "or".
+
+```{r sweden_1952_2007}
+filter(gapminder, country=="Sweden", year==1952 | year==2007)
+```
+
+Second, we can use the `%in%` operator.
+
+```{r sweden_1952_2007_again}
+filter(gapminder, country=="Sweden", year %in% c(1952, 2007))
+```
+
 We use `select` to select a set of columns. We can combine the two by saving the output of `filter` and then using that for `select`.
 
 ```{r filter_then_select}
 sweden <- filter(gapminder, country == "Sweden")
 select(sweden, year, pop)
 ```
-
-> **Challenge**: What was the population of the United States in 1952?
 
 ### Pipes
 
