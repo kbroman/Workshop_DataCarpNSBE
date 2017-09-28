@@ -40,7 +40,7 @@ These data concern the life expectancy, population, and GDP per capita for diffe
 There's also a function `tail()` to look at the last few rows. And both `head()` and `tail()` have arguments that allow you to control how many rows are shown.
 
 > **Challenge**: Look at the help file for `tail()` and try to figure
-> out how to look at the last 20 rows of the `gapminder` data..
+> out how to look at the last 20 rows of the `gapminder` data.
 
 > **Challenge**: The function `str()` tells you about the structure of a data object. Use `str()` with the `gapminder` data.
 >
