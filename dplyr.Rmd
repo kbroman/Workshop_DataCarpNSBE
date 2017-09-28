@@ -18,8 +18,13 @@ knitr::opts_chunk$set(echo = TRUE, results="hide",
 
 We first want to load some data. We'll use the function `read.csv()` to load data from a CSV file.
 
-```{r read_gapminder}
+```{r read_gapminder, eval=FALSE}
 gapminder <- read.csv("http://kbroman.org/datacarp/gapminder.csv")
+```
+
+```{r load_gapminder_really, echo=FALSE}
+# really load the data, locally
+gapminder <- read.csv("data/gapminder.csv")
 ```
 
 In the "environment pane", you'll now see that your workspace contains an object `gapminder`, which is a rectangle of data with `r nrow(gapminder)` rows and `r ncol(gapminder)` columns.

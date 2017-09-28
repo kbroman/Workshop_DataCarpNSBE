@@ -41,9 +41,8 @@ gapminder <- read.csv("http://kbroman.org/datacarp/gapminder.csv")
 ```
 
 ```{r load_gapminder_really, echo=FALSE}
-# really load the data, from the gapminder package
-library(gapminder)
-data(gapminder)
+# really load the data, locally
+gapminder <- read.csv("data/gapminder.csv")
 ```
 
 ### A first plot
