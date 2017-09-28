@@ -517,6 +517,7 @@ install.packages(gapminder)
 I'm going to use that and add a bit of fanciness.
 
 ```{r fancy_gapminder_plot_2007}
+library(gapminder)
 gm_2007 <- gapminder %>% filter(year==2007) %>% arrange(-pop)
 ggplot(gm_2007, aes(y=lifeExp, x=gdpPercap, fill=country, size=sqrt(pop))) +
     geom_point(shape=21) +
