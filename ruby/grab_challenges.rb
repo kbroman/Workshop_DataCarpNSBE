@@ -36,10 +36,15 @@ ofilep.write("output: slidy_presentation\n")
 
 
 challenge = 1
+repeated9 = false
 output.each do |ochunk|
     ofilep.write("---\n\n")
     ofilep.write("# Challenge #{challenge}\n\n")
     ofilep.write(ochunk)
     ofilep.write("\n")
-    challenge += 1
+    if challenge != 9 or repeated9 # challenge 9 is repeated; this could be done better but I'm in a hurry...
+        challenge += 1
+    else
+        repeated9 = true
+    end
 end

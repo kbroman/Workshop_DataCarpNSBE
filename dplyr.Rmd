@@ -162,7 +162,7 @@ gapminder %>%
   select(year, pop)
 ```
 
-> **Challenge**: Using pipes, subset the gapminder data to grab rows where `gdpPercap` was greater than or equal to 35,000. Retain columns `country`, `year`, and `gdpPercap`.
+> **Challenge**: Using pipes, subset the gapminder data to grab rows where `gdpPercap` is greater than or equal to 35,000. Retain the columns `country`, `year`, and `gdpPercap`.
 
 ### More dplyr functions
 
@@ -197,7 +197,7 @@ gapminder %>%
   head
 ```
 
-> **Challenge**: Use mutate to calculate the total GDP in billions of dollars, retrieve just the results for the year 2007, and sort the rows in decreasing order.
+> **Challenge**: Use `mutate` to calculate the total GDP in billions of dollars, retrieve just the results for the year 2007, and sort the rows so that the total GDP is in decreasing order.
 
 We use `summarize()` to get summaries of the values in a column.
 

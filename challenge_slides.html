@@ -42,11 +42,11 @@
 </div>
 <div id="challenge-6" class="slide section level1">
 <h1>Challenge 6</h1>
-<p>Using pipes, subset the gapminder data to grab rows where <code>gdpPercap</code> was greater than or equal to 35,000. Retain columns <code>country</code>, <code>year</code>, and <code>gdpPercap</code>.</p>
+<p>Using pipes, subset the gapminder data to grab rows where <code>gdpPercap</code> is greater than or equal to 35,000. Retain the columns <code>country</code>, <code>year</code>, and <code>gdpPercap</code>.</p>
 </div>
 <div id="challenge-7" class="slide section level1">
 <h1>Challenge 7</h1>
-<p>Use mutate to calculate the total GDP in billions of dollars, retrieve just the results for the year 2007, and sort the rows in decreasing order.</p>
+<p>Use <code>mutate</code> to calculate the total GDP in billions of dollars, retrieve just the results for the year 2007, and sort the rows so that the total GDP is in decreasing order.</p>
 </div>
 <div id="challenge-8" class="slide section level1">
 <h1>Challenge 8</h1>
@@ -56,8 +56,8 @@
 <h1>Challenge 9</h1>
 <p>Calculate the overall GDP per capita by continent in the years 1952 and 2007.</p>
 </div>
-<div id="challenge-10" class="slide section level1">
-<h1>Challenge 10</h1>
+<div id="challenge-9-1" class="slide section level1">
+<h1>Challenge 9</h1>
 <p>Calculate the overall GDP per capita by continent in the years 1952 and 2007.</p>
 <ol style="list-style-type: decimal">
 <li>Use <code>filter()</code> to pull out the rows with <code>year %in% c(1952,2007)</code>.</li>
@@ -66,44 +66,43 @@
 <li>Use <code>mutate()</code> to calculate the GDP per capita for each continent.</li>
 </ol>
 </div>
+<div id="challenge-10" class="slide section level1">
+<h1>Challenge 10</h1>
+<p>Make a scatterplot of <code>lifeExp</code> vs <code>gdpPercap</code> with only the data for China.</p>
+</div>
 <div id="challenge-11" class="slide section level1">
 <h1>Challenge 11</h1>
-<p>Make a scatterplot of <code>lifeExp</code> vs <code>gdpPercap</code> with only for the data for China.</p>
-</div>
-<div id="challenge-12" class="slide section level1">
-<h1>Challenge 12</h1>
-<p>Try out the <code>size</code>, <code>shape</code>, and <code>color</code> aesthetics.</p>
+<p>Try out the <code>size</code>, <code>shape</code>, and <code>color</code> aesthetics in a scatterplot of <code>lifeExp</code> vs <code>gdpPercap</code>.</p>
 <ul>
-<li>Make a scatterplot of <code>lifeExp</code> vs <code>gdpPercap</code>.</li>
-<li>Make point <code>size</code> correspond to the population</li>
-<li>Make point <code>shape</code> correspond to the continent</li>
-<li>Make point <code>color</code> correspond to the continent</li>
+<li>Make the points’ <code>size</code> correspond to the population.</li>
+<li>Make the points’ <code>shape</code> correspond to the continent.</li>
+<li>Make the points’ <code>color</code> correspond to the continent.</li>
 <li>What happens if you use <code>aes(color=pop)</code>?</li>
 <li>How about <code>aes(shape=pop)</code>?</li>
 </ul>
 </div>
+<div id="challenge-12" class="slide section level1">
+<h1>Challenge 12</h1>
+<p>Make a plot of <code>lifeExp</code> vs <code>gdpPercap</code> for China and India, with both lines and points.</p>
+</div>
 <div id="challenge-13" class="slide section level1">
 <h1>Challenge 13</h1>
-<p>Make a plot of <code>lifeExp</code> vs <code>gdpPercap</code> for China and India, with both lines and points.</p>
+<p>Explore the distribution of the population sizes of countries, by continent.</p>
 </div>
 <div id="challenge-14" class="slide section level1">
 <h1>Challenge 14</h1>
-<p>Explore the distribution of the population sizes of countries, by continent.</p>
+<p>Select five countries of interest (e.g., China, India, US, France, Nigeria) and plot <code>lifeExp</code> vs <code>gdpPercap</code> across time (with <code>geom_line</code>), faceting by country.</p>
 </div>
 <div id="challenge-15" class="slide section level1">
 <h1>Challenge 15</h1>
-<p>Select five countries of interest (e.g., China, India, US, France, Nigeria) and plot <code>lifeExp</code> vs <code>gdpPercap</code> across time (with <code>geom_line</code>), faceting by country.</p>
+<p>Revisit a few of the plots you’ve made and try saving PNG and PDF files. Try different heights and widths. Try out the <code>scale</code> parameter.</p>
 </div>
 <div id="challenge-16" class="slide section level1">
 <h1>Challenge 16</h1>
-<p>Revisit a few of the plots you’ve made and try saving PNG and PDF files. Try different heights and widths. Try out the <code>scale</code> parameter.</p>
+<p>Create a plot with lines for the United States and Sweden, but using the axis limits defined with the full data.</p>
 </div>
 <div id="challenge-17" class="slide section level1">
 <h1>Challenge 17</h1>
-<p>Create a plot with lines for the United States and Sweden, but using the axis limits defined with the full data.</p>
-</div>
-<div id="challenge-18" class="slide section level1">
-<h1>Challenge 18</h1>
 <p>Make a set of histograms of <code>lifeExp</code> for the year 2007, using <code>facet_grid</code> to split by continent. Use different colors for the five continents, chosen manually.</p>
 </div>
 

@@ -42,13 +42,13 @@ What was the population of the United States in 1952?
 
 # Challenge 6
 
-Using pipes, subset the gapminder data to grab rows where `gdpPercap` was greater than or equal to 35,000. Retain columns `country`, `year`, and `gdpPercap`.
+Using pipes, subset the gapminder data to grab rows where `gdpPercap` is greater than or equal to 35,000. Retain the columns `country`, `year`, and `gdpPercap`.
 
 ---
 
 # Challenge 7
 
-Use mutate to calculate the total GDP in billions of dollars, retrieve just the results for the year 2007, and sort the rows in decreasing order.
+Use `mutate` to calculate the total GDP in billions of dollars, retrieve just the results for the year 2007, and sort the rows so that the total GDP is in decreasing order.
 
 ---
 
@@ -64,7 +64,7 @@ Calculate the overall GDP per capita by continent in the years 1952 and 2007.
 
 ---
 
-# Challenge 10
+# Challenge 9
 
 Calculate the overall GDP per capita by continent in the years 1952 and 2007.
 
@@ -75,29 +75,29 @@ Calculate the overall GDP per capita by continent in the years 1952 and 2007.
 
 ---
 
-# Challenge 11
+# Challenge 10
 
 
-Make a scatterplot of `lifeExp` vs `gdpPercap` with only for the data for
+Make a scatterplot of `lifeExp` vs `gdpPercap` with only the data for
 China.
 
 ---
 
-# Challenge 12
+# Challenge 11
 
 
-Try out the `size`, `shape`, and `color` aesthetics.
+Try out the `size`, `shape`, and `color` aesthetics in a scatterplot
+of `lifeExp` vs `gdpPercap`.
 
-- Make a scatterplot of `lifeExp` vs `gdpPercap`.
-- Make point `size` correspond to the population
-- Make point `shape` correspond to the continent
-- Make point `color` correspond to the continent
+- Make the points' `size` correspond to the population.
+- Make the points' `shape` correspond to the continent.
+- Make the points' `color` correspond to the continent.
 - What happens if you use `aes(color=pop)`?
 - How about `aes(shape=pop)`?
 
 ---
 
-# Challenge 13
+# Challenge 12
 
 
 Make a plot of `lifeExp` vs `gdpPercap` for China and India, with
@@ -105,7 +105,7 @@ both lines and points.
 
 ---
 
-# Challenge 14
+# Challenge 13
 
 
 Explore the distribution of the population sizes of countries, by
@@ -113,7 +113,7 @@ continent.
 
 ---
 
-# Challenge 15
+# Challenge 14
 
 
 Select five countries of interest (e.g., China, India, US, France,
@@ -122,7 +122,7 @@ Nigeria) and plot `lifeExp` vs `gdpPercap` across time (with
 
 ---
 
-# Challenge 16
+# Challenge 15
 
 
 Revisit a few of the plots you've made and try saving PNG and PDF
@@ -130,7 +130,7 @@ files. Try different heights and widths. Try out the `scale` parameter.
 
 ---
 
-# Challenge 17
+# Challenge 16
 
 
 Create a plot with lines for the United States and Sweden, but
@@ -138,7 +138,7 @@ using the axis limits defined with the full data.
 
 ---
 
-# Challenge 18
+# Challenge 17
 
 
 Make a set of histograms of `lifeExp` for the year 2007, using

@@ -212,7 +212,7 @@ select(sweden, year, pop)</code></pre>
   filter(country==&quot;Sweden&quot;) %&gt;%
   select(year, pop)</code></pre>
 <blockquote>
-<p><strong>Challenge</strong>: Using pipes, subset the gapminder data to grab rows where <code>gdpPercap</code> was greater than or equal to 35,000. Retain columns <code>country</code>, <code>year</code>, and <code>gdpPercap</code>.</p>
+<p><strong>Challenge</strong>: Using pipes, subset the gapminder data to grab rows where <code>gdpPercap</code> is greater than or equal to 35,000. Retain the columns <code>country</code>, <code>year</code>, and <code>gdpPercap</code>.</p>
 </blockquote>
 </div>
 <div id="more-dplyr-functions" class="section level3">
@@ -234,7 +234,7 @@ select(sweden, year, pop)</code></pre>
   mutate(total_gdp = gdpPercap * pop) %&gt;%
   head</code></pre>
 <blockquote>
-<p><strong>Challenge</strong>: Use mutate to calculate the total GDP in billions of dollars, retrieve just the results for the year 2007, and sort the rows in decreasing order.</p>
+<p><strong>Challenge</strong>: Use <code>mutate</code> to calculate the total GDP in billions of dollars, retrieve just the results for the year 2007, and sort the rows so that the total GDP is in decreasing order.</p>
 </blockquote>
 <p>We use <code>summarize()</code> to get summaries of the values in a column.</p>
 <pre class="r"><code>gapminder %&gt;%
