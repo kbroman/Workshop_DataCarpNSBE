@@ -22,9 +22,9 @@ The function `str()` tells you about the structure of a data object. Use `str()`
 
 Which of the following are *not* equivalent?
 
-a. `gapminder[50,3]` and `gapminder[50, "lifeExp"]`
-b. `gapminder[50,3]` and `gapminder[3, 50]`
-c. `gapminder[50,3]` and `gapminder$lifeExp[50]`
+a. `gapminder[50,4]` and `gapminder[50, "lifeExp"]`
+b. `gapminder[50,4]` and `gapminder[4, 50]`
+c. `gapminder[50,4]` and `gapminder$lifeExp[50]`
 
 ---
 
