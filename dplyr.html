@@ -172,7 +172,7 @@ gapminder$lifeExp[80]</code></pre>
 </ol>
 </blockquote>
 <blockquote>
-<p><strong>Challenge</strong>: Which countries have had life expectencies greater than 80?</p>
+<p><strong>Challenge</strong>: Which countries have had life expectancies greater than 80?</p>
 </blockquote>
 </div>
 <div id="data-manipulation-with-dplyr" class="section level3">
@@ -217,7 +217,7 @@ select(sweden, year, pop)</code></pre>
 </div>
 <div id="more-dplyr-functions" class="section level3">
 <h3>More dplyr functions</h3>
-<p>We use <code>arrange</code> to sort the rows based on some column. For example, we could sort the results of that last challenge based on <code>gdpPerCap</code>.</p>
+<p>We use <code>arrange</code> to sort the rows based on some column. For example, we could sort the results of that last challenge based on <code>gdpPercap</code>.</p>
 <pre class="r"><code>gapminder %&gt;%
   filter(gdpPercap &gt;= 35000) %&gt;%
   select(country, year, gdpPercap) %&gt;%
