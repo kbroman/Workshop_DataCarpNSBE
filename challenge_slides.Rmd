@@ -4,7 +4,8 @@ output: slidy_presentation
 
 # Challenge 1
 
-Look at the help file for `tail()` and figure out how to look at the last 20 rows.
+Look at the help file for `tail()` and try to figure
+out how to look at the last 20 rows of the `gapminder` data..
 
 ---
 
