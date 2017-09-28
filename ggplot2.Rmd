@@ -127,12 +127,11 @@ ggplot(gm_1952, aes(x=gdpPercap, y=lifeExp, color=continent)) +
 
 > **Challenge**:
 >
-> Try out the `size`, `shape`, and `color` aesthetics in a scatterplot
+> Try out the `size` and `shape` aesthetics in a scatterplot
 > of `lifeExp` vs `gdpPercap`.
 >
 > - Make the points' `size` correspond to the population.
 > - Make the points' `shape` correspond to the continent.
-> - Make the points' `color` correspond to the continent.
 > - What happens if you use `aes(color=pop)`?
 > - How about `aes(shape=pop)`?
 
