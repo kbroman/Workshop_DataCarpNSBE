@@ -13,18 +13,14 @@
 <body>
 <div id="challenge-1" class="slide section level1">
 <h1>Challenge 1</h1>
-<p>Look at the help file for <code>tail()</code> and try to figure out how to look at the last 20 rows of the <code>gapminder</code> data.</p>
-</div>
-<div id="challenge-2" class="slide section level1">
-<h1>Challenge 2</h1>
 <p>The function <code>str()</code> tells you about the structure of a data object. Use <code>str()</code> with the <code>gapminder</code> data.</p>
 <ul>
 <li>How many countries are there?</li>
 <li>What is the “class” of this data object?</li>
 </ul>
 </div>
-<div id="challenge-3" class="slide section level1">
-<h1>Challenge 3</h1>
+<div id="challenge-2" class="slide section level1">
+<h1>Challenge 2</h1>
 <p>Which of the following are <em>not</em> equivalent?</p>
 <ol style="list-style-type: lower-alpha">
 <li><code>gapminder[50,4]</code> and <code>gapminder[50, &quot;lifeExp&quot;]</code></li>
@@ -32,32 +28,32 @@
 <li><code>gapminder[50,4]</code> and <code>gapminder$lifeExp[50]</code></li>
 </ol>
 </div>
+<div id="challenge-3" class="slide section level1">
+<h1>Challenge 3</h1>
+<p>Which countries have had life expectancies greater than 80?</p>
+</div>
 <div id="challenge-4" class="slide section level1">
 <h1>Challenge 4</h1>
-<p>Which countries have had life expectancies greater than 80?</p>
+<p>What was the population of the United States in 1952?</p>
 </div>
 <div id="challenge-5" class="slide section level1">
 <h1>Challenge 5</h1>
-<p>What was the population of the United States in 1952?</p>
+<p>Using pipes, subset the gapminder data to grab rows where <code>gdpPercap</code> is greater than or equal to 35,000. Retain the columns <code>country</code>, <code>year</code>, and <code>gdpPercap</code>.</p>
 </div>
 <div id="challenge-6" class="slide section level1">
 <h1>Challenge 6</h1>
-<p>Using pipes, subset the gapminder data to grab rows where <code>gdpPercap</code> is greater than or equal to 35,000. Retain the columns <code>country</code>, <code>year</code>, and <code>gdpPercap</code>.</p>
+<p>Use <code>mutate</code> to calculate the total GDP in billions of dollars, retrieve just the results for the year 2007, and sort the rows so that the total GDP is in decreasing order.</p>
 </div>
 <div id="challenge-7" class="slide section level1">
 <h1>Challenge 7</h1>
-<p>Use <code>mutate</code> to calculate the total GDP in billions of dollars, retrieve just the results for the year 2007, and sort the rows so that the total GDP is in decreasing order.</p>
+<p>What was the average life expectancy (<code>lifeExp</code>) by continent in 2007?</p>
 </div>
 <div id="challenge-8" class="slide section level1">
 <h1>Challenge 8</h1>
-<p>What was the average life expectancy (<code>lifeExp</code>) by continent in 2007?</p>
-</div>
-<div id="challenge-9" class="slide section level1">
-<h1>Challenge 9</h1>
 <p>Calculate the overall GDP per capita by continent in the years 1952 and 2007.</p>
 </div>
-<div id="challenge-9-1" class="slide section level1">
-<h1>Challenge 9</h1>
+<div id="challenge-8-1" class="slide section level1">
+<h1>Challenge 8</h1>
 <p>Calculate the overall GDP per capita by continent in the years 1952 and 2007.</p>
 <ol style="list-style-type: decimal">
 <li>Use <code>filter()</code> to pull out the rows with <code>year %in% c(1952,2007)</code>.</li>
@@ -66,12 +62,12 @@
 <li>Use <code>mutate()</code> to calculate the GDP per capita for each continent.</li>
 </ol>
 </div>
-<div id="challenge-10" class="slide section level1">
-<h1>Challenge 10</h1>
+<div id="challenge-9" class="slide section level1">
+<h1>Challenge 9</h1>
 <p>Make a scatterplot of <code>lifeExp</code> vs <code>gdpPercap</code> with only the data for China.</p>
 </div>
-<div id="challenge-11" class="slide section level1">
-<h1>Challenge 11</h1>
+<div id="challenge-10" class="slide section level1">
+<h1>Challenge 10</h1>
 <p>Try out the <code>size</code> and <code>shape</code> aesthetics in a scatterplot of <code>lifeExp</code> vs <code>gdpPercap</code>.</p>
 <ul>
 <li>Make the points’ <code>size</code> correspond to the population.</li>
@@ -80,28 +76,28 @@
 <li>How about <code>aes(shape=pop)</code>?</li>
 </ul>
 </div>
+<div id="challenge-11" class="slide section level1">
+<h1>Challenge 11</h1>
+<p>Make a plot of <code>lifeExp</code> vs <code>gdpPercap</code> for China and India, with both lines and points.</p>
+</div>
 <div id="challenge-12" class="slide section level1">
 <h1>Challenge 12</h1>
-<p>Make a plot of <code>lifeExp</code> vs <code>gdpPercap</code> for China and India, with both lines and points.</p>
+<p>Explore the distribution of the population sizes of countries, by continent.</p>
 </div>
 <div id="challenge-13" class="slide section level1">
 <h1>Challenge 13</h1>
-<p>Explore the distribution of the population sizes of countries, by continent.</p>
+<p>Select five countries of interest (e.g., China, India, US, France, Nigeria) and plot <code>lifeExp</code> vs <code>gdpPercap</code> across time (with <code>geom_line</code>), faceting by country.</p>
 </div>
 <div id="challenge-14" class="slide section level1">
 <h1>Challenge 14</h1>
-<p>Select five countries of interest (e.g., China, India, US, France, Nigeria) and plot <code>lifeExp</code> vs <code>gdpPercap</code> across time (with <code>geom_line</code>), faceting by country.</p>
+<p>Revisit a few of the plots you’ve made and try saving PNG and PDF files. Try different heights and widths. Try out the <code>scale</code> parameter.</p>
 </div>
 <div id="challenge-15" class="slide section level1">
 <h1>Challenge 15</h1>
-<p>Revisit a few of the plots you’ve made and try saving PNG and PDF files. Try different heights and widths. Try out the <code>scale</code> parameter.</p>
+<p>Create a plot with lines for the United States and Sweden, but using the axis limits defined with the full data.</p>
 </div>
 <div id="challenge-16" class="slide section level1">
 <h1>Challenge 16</h1>
-<p>Create a plot with lines for the United States and Sweden, but using the axis limits defined with the full data.</p>
-</div>
-<div id="challenge-17" class="slide section level1">
-<h1>Challenge 17</h1>
 <p>Make a set of histograms of <code>lifeExp</code> for the year 2007, using <code>facet_grid</code> to split by continent. Use different colors for the five continents, chosen manually.</p>
 </div>
 
