@@ -11,6 +11,11 @@ These lessons cover [dplyr](http://dplyr.tidyverse.org/) and
 - [dplyr lesson](dplyr.html)
 - [ggplot2 lesson](ggplot2.html)
 
+The scripts developed during the workshop are the following:
+
+- [`data_manipulation.R`](data_manipulation.R)
+- [`data_visualization.R`](data_visualization.R)
+
 Further details on the workshop are at <https://christinalk.github.io/2017-09-28-nsbe/>
 
 ---
